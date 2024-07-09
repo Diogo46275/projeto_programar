@@ -25,6 +25,6 @@ Fique à vontade para explorar, clonar e contribuir com seus próprios projetos.
 
 ## Contato
 
-Para sugestões, dúvidas ou colaborações, entre em contato através dos issues ou diretamente pelo email [seu_email@example.com](mailto:seu_email@example.com).
+Para sugestões, dúvidas ou colaborações, entre em contato através dos issues ou diretamente pelo email [seu_email@example.com](diogo46275@gmail.com).
 
 Divirta-se programando!
