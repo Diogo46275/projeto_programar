@@ -1,0 +1,65 @@
+import customtkinter
+"""
+Criando a janela!
+"""
+
+janela = customtkinter.CTk()
+# Alterando o título!
+janela.title("Treinando CTkCheckBox!")
+# Colocando o tamanho da janela!
+janela.geometry('310x180')
+
+"""
+Para criar um CTkCheckBox vamos criar uma variével que armazenará o retorno do CTkCheckBox.
+    ou seja irá armazenar se o CTkCheckBox está selecionado ou não.
+    Por padrão quando retorno é = a 0 não está selecionado.
+Está sendo usado o -> variable=var_promocoes
+    Este comando serve para armazenar o resultado do var_promocoes no checkbox_promocoes
+"""
+
+#Criando uma linha vazia para dar espaço para o botão
+linha_vazia = customtkinter.CTkLabel(janela,text="")
+linha_vazia.grid(row=0,column=1)
+
+# Criando a variavel para armazenar o resultado do CTkCheckBox
+var_promocoes = customtkinter.IntVar()
+# Criando o CTkCheckBox e armazenado o resultado da variavel var_promocoes
+checkbox_promocoes = customtkinter.CTkCheckBox(janela, text=" Deseja receber e-mail promocionais?", variable=var_promocoes)
+checkbox_promocoes.grid(row=1, column=0,sticky="W") # Colocando o checkbox_promocoes na janela
+
+# Vamos criar outro CTkCheckBox
+mensagem_zap = customtkinter.IntVar()
+checkbox_zap = customtkinter.CTkCheckBox(janela, text="Aceita receber promoções no WhatsApp?", variable=mensagem_zap)
+checkbox_zap.grid(row=2,column=0, sticky="W")
+
+# Vamos criar outro CTkCheckBox
+politica_privacidade = customtkinter.IntVar()
+checkbox_privacidade = customtkinter.CTkCheckBox(janela, text="Está de acordo com as politicas de provacidade?", variable=politica_privacidade)
+checkbox_privacidade.grid(row=3,column=0,sticky="W")
+
+#Criando uma linha vazia para dar espaço para o botão
+linha_vazia = customtkinter.CTkLabel(janela,text="")
+linha_vazia.grid(row=4,column=1)
+
+"""
+Agora vamos criar um botão e sua funcionalidade
+"""
+
+def enviar():
+    if var_promocoes.get():
+        print("Usuário deseja receber informação\\n")
+    else:
+        print("Usuário NÃO deseja receber informação\\n")
+    if mensagem_zap.get():
+        print("Usuário deseja receber informação no WhatsApp\\n")
+    else:
+        print("Usuário NÃO aceita receber promoções no WhatsApp\\n")
+    if politica_privacidade.get():
+        print("Usuário aceitou a politica de privacidade!\\n")
+    else:
+        print("Usuário NÃO aceitou a politica de provacidade\\n")
+
+botao_enviar = customtkinter.CTkButton(janela, text= "Enviar", command=enviar)
+botao_enviar.grid(row=5,column=0,)
+
+janela.mainloop()
